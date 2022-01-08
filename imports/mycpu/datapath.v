@@ -264,7 +264,7 @@ module datapath (
 
     assign inst_enF = pc_reg_ceF & ~flush_exceptionM;//pcF是否有效
 
-    assign instrF_temp = ({32{~(|(pcF[1:0] ^ 2'b00))}} & instrF);
+    assign instrF_temp = ({32{~(|(pcF[1:0]))}} & instrF);
     assign is_in_delayslot_iF = branchD | jumpD;//上一条指令是跳转指令
     //IF_ID
     if_id if_id(
