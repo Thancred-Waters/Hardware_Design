@@ -45,5 +45,5 @@ module hazard (
     assign flushD = flush_exceptionM | (flush_pred_failedM & ~pipeline_stall) | (flush_jump_confilctE & ~pipeline_stall & ~stall_ltypeE);       
     assign flushE = flush_exceptionM | (flush_pred_failedM & ~pipeline_stall) | (stall_ltypeE & ~pipeline_stall);     
     assign flushM = flush_exceptionM;
-    assign flushW = 1'b0;//MEM阶段永远不需要刷新
+    assign flushW = 1'b0;//WB阶段永远不需要刷新
 endmodule

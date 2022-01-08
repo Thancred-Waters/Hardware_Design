@@ -17,7 +17,7 @@ module alu_decoder(
     assign rt = instrD[20:16];
     assign funct = instrD[5:0];
     
-	always @* begin
+	always @(*) begin
 		case(op_code)
 			`EXE_R_TYPE: 
 				case(funct)
