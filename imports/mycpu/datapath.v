@@ -482,7 +482,7 @@ module datapath (
 
     mem_ctrl mem_ctrl(
         .l_s_typeM(l_s_typeM),
-	    .addr(alu_outM),
+	    .addr(mem_addrM),
 
         .data_wdataM(rt_valueM),    //原始的wdata
         .mem_wdataM(mem_wdataM),    //新的wdata
@@ -515,7 +515,7 @@ module datapath (
         .ri(riM), .break(breakM), .syscall(syscallM), .overflow(overflowM), .addrErrorSw(addrErrorSwM), .addrErrorLw(addrErrorLwM), .pcError(pcErrorM), .eretM(eretM),
         .cp0_status(cp0_statusW), .cp0_cause(cp0_causeW), .cp0_epc(cp0_epcW),
         .pcM(pcM),
-        .alu_outM(alu_outM),
+        .mem_addrM(mem_addrM),
 
         .except_type(except_typeM),
         .flush_exception(flush_exceptionM),

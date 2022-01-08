@@ -5,7 +5,7 @@ module exception(
    input ri, break, syscall, overflow, addrErrorSw, addrErrorLw, pcError, eretM,
    input [31:0] cp0_status, cp0_cause, cp0_epc,
    input [31:0] pcM,
-   input [31:0] alu_outM,
+   input [31:0] mem_addrM,
 
    output [31:0] except_type,
    output flush_exception,
@@ -41,6 +41,6 @@ module exception(
 
     assign flush_exception =  pc_trap;
 
-    assign badvaddrM       =  pcError ? pcM : alu_outM       ;
+    assign badvaddrM       =  pcError ? pcM : mem_addrM;
    
 endmodule
