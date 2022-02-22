@@ -401,7 +401,7 @@ module datapath (
         .overflowE(overflowE)//有符号运算溢出
     );
 
-    assign mem_addrE = src_aE + src_bE;//生成lw和sw等访存指令的地址，绕过ALU内部逻辑，消除关键路径
+    assign mem_addrE = src_aE + immE;//生成lw和sw等访存指令的地址，绕过ALU内部逻辑，消除关键路径
 
     //以下mux4都不能集成到datapath中，否则时序不满足
 
